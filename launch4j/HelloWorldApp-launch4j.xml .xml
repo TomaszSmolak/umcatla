@@ -2,27 +2,20 @@
   <dontWrapJar>true</dontWrapJar>
   <headerType>gui</headerType>
 
-  <!-- Ausgabe-Datei (.exe) -->
   <outfile>C:\Users\tomas\IdeaProjects\umcatla\HelloWorldApp\HelloWorldApp.exe</outfile>
 
-  <!-- Relativer Pfad zur .jar -->
-  <jar>hello-world-gui-1.0-SNAPSHOT.jar</jar>
+  <jar>../target/umcatla-1.0.0-jar-with-dependencies.jar</jar>
 
-  <!-- Main-Klasse -->
   <classPath>
-    <mainClass>gui.HelloWorldApp</mainClass>
+    <mainClass>guiFactory.App</mainClass>
   </classPath>
 
-  <!-- Minimale JRE-Version -->
   <jre>
     <minVersion>24</minVersion>
     <path>C:\Program Files\Eclipse Adoptium\jdk-24.0.1.9-hotspot</path>
     <bundledJre64Bit>true</bundledJre64Bit>
   </jre>
 
-
-
-  <!-- Optionen -->
   <stayAlive>false</stayAlive>
   <restartOnCrash>false</restartOnCrash>
 </launch4jConfig>
