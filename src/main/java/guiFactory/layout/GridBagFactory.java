@@ -3,6 +3,7 @@ package guiFactory.layout;
 import javax.swing.*;
 import java.awt.*;
 
+
 public class GridBagFactory {
 
     private final JPanel panel;
@@ -38,6 +39,12 @@ public class GridBagFactory {
         gbc.anchor = anchor;
         return this;
     }
+
+    public GridBagFactory setGridWidth(int width) {
+        gbc.gridwidth = width;
+        return this;
+    }
+
 
     public JPanel build() {
         return panel;
