@@ -7,7 +7,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 /**
- * Eine Factory-Klasse zur Erstellung und Konfiguration von {@link javax.swing.JButton}.
+ * Eine Factory-Klasse zur Erstellung und Konfiguration von {@link javax.swing.JLabel}.
  * <p>
  * Die Klasse folgt dem <i>Fluent Interface Pattern</i>, sodass Einstellungen
  * wie Titel, Größe, Klickverhalten usw. bequem per Methodenverkettung vorgenommen werden können.
@@ -15,7 +15,7 @@ import java.awt.event.MouseEvent;
  * <p>
  * Beispiel:
  * <pre>{@code
- *     JButton btnWriter = new ButtonFactory("Mein Knopf")
+ *     JButton btnBeispiel = new ButtonFactory("Mein Beispielknopf")
  *                 .setFont(new Font("Arial", Font.BOLD, 14))
  *                 .setForeground(Color.BLACK)
  *                 .setBackground(Color.WHITE)

@@ -15,15 +15,15 @@ public class GuiBuilder {
         // Komponenten erstellen
         JLabel label1 = new LabelFactory("Hallo Welt!").build();
 
-        JLabel label2 = new LabelFactory(
-                "Zentriert + Farbe",
-                SwingConstants.CENTER,
-                Color.BLUE,
-                new Font("Arial", Font.BOLD, 16),
-                BorderFactory.createLineBorder(Color.BLUE, 2),
-                150,
-                30
-        ).build();
+
+
+        JLabel lblWriter = new LabelFactory("Writer Label")
+                .setAlignment(SwingConstants.CENTER)
+                .setFont(new Font("Arial", Font.BOLD, 14))
+                .setColor(Color.BLUE)
+                .build();
+
+
 
         JButton btnWriter = new ButtonFactory("java.io.Writer")
                 .setFont(new Font("Arial", Font.BOLD, 14))
@@ -70,7 +70,7 @@ public class GuiBuilder {
 
         // Komponenten hinzufügen
         //frame.add(label1);
-        //frame.add(label2);
+        frame.add(lblWriter);
         frame.add(btnWriter);
         frame.add(btnReader);
         frame.add(btnInputStream);
