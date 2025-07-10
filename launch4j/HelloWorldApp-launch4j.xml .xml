@@ -4,7 +4,7 @@
 
   <outfile>C:\Users\tomas\IdeaProjects\umcatla\HelloWorldApp\HelloWorldApp.exe</outfile>
 
-  <jar>../target/umcatla-1.0.0-jar-with-dependencies.jar</jar>
+  <jar>umcatla-1.0.0-jar-with-dependencies.jar</jar>
 
   <classPath>
     <mainClass>guiFactory.App</mainClass>

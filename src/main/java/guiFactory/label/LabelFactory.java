@@ -6,6 +6,13 @@ import java.awt.*;
 
 public class LabelFactory {
 
+
+
+
+
+
+
+
     private final String text;
     private int alignment = SwingConstants.LEFT;
     private Color color = Color.BLACK;
