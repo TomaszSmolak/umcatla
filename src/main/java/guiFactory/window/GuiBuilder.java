@@ -3,25 +3,20 @@ package guiFactory.window;
 import guiFactory.label.LabelFactory;
 import guiFactory.button.ButtonFactory;
 import javax.swing.*;
-//import javax.swing.border.Border;
 import java.awt.*;
 import guiFactory.layout.GridBagFactory;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 public class GuiBuilder {
 
     public void build(JFrame frame) {
         // Layout setzen
-        //frame.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 20));
         GridBagFactory mainGrid = new GridBagFactory();
         GridBagFactory WB1Grid = new GridBagFactory();
         GridBagFactory WB2Grid = new GridBagFactory();
         GridBagFactory WB3Grid = new GridBagFactory();
 
         // Komponenten erstellen
-        JLabel label1 = new LabelFactory("Hallo Welt!").build();
-
-
-
         JLabel lblWBAufgabe1 = new LabelFactory("Workbook Aufgabenstellung 1")
                 .setAlignment(SwingConstants.CENTER)
                 .setFont(new Font("Arial", Font.BOLD, 14))
@@ -37,10 +32,6 @@ public class GuiBuilder {
                 .setFont(new Font("Arial", Font.BOLD, 14))
                 .setColor(Color.BLUE)
                 .build();
-
-
-
-
         JButton btnWriter = new ButtonFactory("java.io.Writer")
                 .setFont(new Font("Arial", Font.BOLD, 14))
                 .setForeground(Color.BLACK)
@@ -55,6 +46,7 @@ public class GuiBuilder {
                             .setTitle("java.io.Writer Beispiel")
                             .setSize(600, 400)
                             .setCentered(true)
+                            .setCloseOperation(DISPOSE_ON_CLOSE)
                             .build();
                     writerWindow.setVisible(true);
                 });
@@ -69,6 +61,15 @@ public class GuiBuilder {
                 .enableHover(Color.GRAY)
                 .setFocusPainted(false)
                 .build();
+        btnReader.addActionListener(e -> {
+            JFrame readerWindow = new ReaderWindowFactory()
+                    .setTitle("java.io.Reader Beispiel")
+                    .setSize(600, 400)
+                    .setCentered(true)
+                    .setCloseOperation(DISPOSE_ON_CLOSE)
+                    .build();
+            readerWindow.setVisible(true);
+        });
 
         JButton btnInputStream = new ButtonFactory("java.io.InputStream")
                 .setFont(new Font("Arial", Font.BOLD, 14))
@@ -79,6 +80,15 @@ public class GuiBuilder {
                 .enableHover(Color.GRAY)
                 .setFocusPainted(false)
                 .build();
+        btnInputStream.addActionListener(e -> {
+            JFrame inputStreamWindow = new InputStreamWindowFactory()
+                    .setTitle("java.io.InputStream Beispiel")
+                    .setSize(600, 400)
+                    .setCentered(true)
+                    .setCloseOperation(DISPOSE_ON_CLOSE)
+                    .build();
+            inputStreamWindow.setVisible(true);
+        });
 
         JButton btnOutputStream = new ButtonFactory("java.io.OutputStream")
                 .setFont(new Font("Arial", Font.BOLD, 14))
@@ -89,8 +99,14 @@ public class GuiBuilder {
                 .enableHover(Color.GRAY)
                 .setFocusPainted(false)
                 .build();
-        btnOutputStream.addActionListener( e -> {
-            System.out.println("Ich wurde geklickt.");
+        btnOutputStream.addActionListener(e -> {
+            JFrame outputStreamWindow = new OutputStreamWindowFactory()
+                    .setTitle("java.io.OutputStream Beispiel")
+                    .setSize(600, 400)
+                    .setCentered(true)
+                    .setCloseOperation(DISPOSE_ON_CLOSE)
+                    .build();
+            outputStreamWindow.setVisible(true);
         });
 
         JButton btnHashMap = new ButtonFactory("HashMap")

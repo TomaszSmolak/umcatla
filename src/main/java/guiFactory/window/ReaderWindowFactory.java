@@ -10,7 +10,7 @@ import javax.swing.*;
  * <p>
  * Beispiel:
  * <pre>{@code
- *     JFrame frame = new WindowFactory("Mein Fenster", 1024, 768)
+ *     JFrame frame = new ReaderWindowFactory("Mein Fenster", 1024, 768)
  *         .setCentered(true)
  *         .setCloseOperation(JFrame.DISPOSE_ON_CLOSE)
  *         .build();
@@ -23,92 +23,90 @@ import javax.swing.*;
  *
  * @author Tomasz Smolak
  * @version 1.0
- * @since 2025-07-09
+ * @since 2025-07-11
  */
-public class WindowFactory {
+public class ReaderWindowFactory {
 
-    /** Titel des Fensters */
+    /** Standardtitel des Fensters */
     private String title = "Fenster";
 
-    /** Breite des Fensters in Pixeln */
+    /** Standard Breite des Fensters */
     private int width = 800;
 
-    /** Höhe des Fensters in Pixeln */
+    /** Standard Höhe des Fensters */
     private int height = 600;
 
     /** Standard Position des Fensters (zentriert) */
     private boolean centered = true;
 
-    /** Verhalten beim Schließen des Fensters (z. B. EXIT_ON_CLOSE) */
+    /** Standard Schließverhalten des Fensters (Schließt das Programm) */
     private int closeOperation = JFrame.EXIT_ON_CLOSE;
 
     /**
      * Standardkonstruktor.
      * @since 1.0
      */
-    public WindowFactory() {
-    }
+    public ReaderWindowFactory(){}
 
     /**
      * Erweiterter Konstruktor für Standardfenster mit Titel und Größe.
-     *
-     * @param title  der neue Fenstertitel
-     * @param width  die neue Fensterbreite
+     * @param title der neue FensterTitel
+     * @param width die neue Fensterbreite
      * @param height die neue Fensterhöhe
      * @since 1.0
      */
-    public WindowFactory(String title, int width, int height) {
+    public ReaderWindowFactory(String title, int width, int height) {
         this.title = title;
         this.width = width;
         this.height = height;
     }
 
     /**
-     * Setzt den Titel des Fensters.
+     * Setzt den Fenstertitel.
      *
      * @param title der neue Fenstertitel
-     * @return die aktuelle Instanz von {@code WindowFactory} für Methodenverkettung
+     * @return die aktuelle Instanz von {@code ReaderWindowFactory} für Methodenverkettung
      * @since 1.0
      */
-    public WindowFactory setTitle(String title) {
+    public ReaderWindowFactory setTitle(String title) {
         this.title = title;
         return this;
     }
 
     /**
-     * Bestimmt die Größe des Fensters.
+     * Setzt die größe des Fensters.
      *
-     * @param width  die neue Breite des Fensters.
-     * @param height die neue Höhe des Fensters.
-     * @return die aktuelle Instanz von {@code WindowFactory} für Methodenverkettung
+     * @param width die neue Breite des Fensters
+     * @param height die neue Höhe des Fensters
+     * @return die aktuelle Instanz von {@code ReaderWindowFactory} für Methodenverkettung
      * @since 1.0
      */
-    public WindowFactory setSize(int width, int height) {
+    public ReaderWindowFactory setSize(int width, int height) {
         this.width = width;
         this.height = height;
         return this;
     }
 
     /**
-     * bestimmt, ob das Fenster zentriert ist.
+     * Setzt die Position des Fensters.
      *
-     * @param centered {@code true}, wenn das Fenster zentriert werden soll, sonst {@code false}
-     * @return die aktuelle Instanz von {@code WindowFactory} für Methodenverkettung
+     * @param centered die neue Position
+     * @return die aktuelle Instanz von {@code ReaderWindowFactory} für Methodenverkettung
      * @since 1.0
      */
-    public WindowFactory setCentered(boolean centered) {
+    public ReaderWindowFactory setCentered(boolean centered) {
         this.centered = centered;
         return this;
     }
 
     /**
-     * Legt die Aktion fest, die beim Schließen des Fensters ausgeführt wird.
+     * Setzt das Schließverhalten des Fensters.
      *
-     * @param closeOperation eine der Konstanten aus {@link javax.swing.JFrame}, z. B. {@code JFrame.EXIT_ON_CLOSE}
-     * @return die aktuelle Instanz von {@code WindowFactory} für Methodenverkettung
+     * @param closeOperation das neue Schließverhalten
+     * @return die aktuelle Instanz von {@code ReaderWindowFactory} für Methodenverkettung
      * @since 1.0
      */
-    public WindowFactory setCloseOperation(int closeOperation) {
+    public ReaderWindowFactory setCloseOperation(int closeOperation) {
         this.closeOperation = closeOperation;
         return this;
     }
@@ -125,12 +123,13 @@ public class WindowFactory {
      * @since 1.0
      */
     public JFrame build() {
-        JFrame mainFrame = new JFrame(title);
-        mainFrame.setSize(width, height);
-        mainFrame.setDefaultCloseOperation(closeOperation);
-        if (centered) {
-            mainFrame.setLocationRelativeTo(null);
+        JFrame readerFrame = new JFrame(title);
+        readerFrame.setSize(width, height);
+        readerFrame.setDefaultCloseOperation(closeOperation);
+        if(centered){
+            readerFrame.setLocationRelativeTo(null);
         }
-        return mainFrame;
+        return readerFrame;
     }
+
 }
