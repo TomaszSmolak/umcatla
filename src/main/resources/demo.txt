@@ -1,0 +1,2 @@
+Dies ist eine Beispiel-Textdatei.
+Sie demonstriert den Einsatz von java.io.Reader in einer GUI.

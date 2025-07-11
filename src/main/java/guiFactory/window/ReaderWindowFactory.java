@@ -39,6 +39,12 @@ public class ReaderWindowFactory {
     /** Standard Position des Fensters (zentriert) */
     private boolean centered = true;
 
+    /** TODO: Fenstergröße veränderbar machen (true/false konfigurierbar) */
+    private boolean resizable = true;
+
+    /** TODO: Optionales Fenster-Icon (z.B. für Anwendungssymbol) */
+    private ImageIcon icon;
+
     /** Standard Schließverhalten des Fensters (Schließt das Programm) */
     private int closeOperation = JFrame.EXIT_ON_CLOSE;
 
@@ -81,6 +87,7 @@ public class ReaderWindowFactory {
      * @return die aktuelle Instanz von {@code ReaderWindowFactory} für Methodenverkettung
      * @since 1.0
      */
+    // TODO: Eingabevalidierung einbauen: width und height > 0 prüfen
     public ReaderWindowFactory setSize(int width, int height) {
         this.width = width;
         this.height = height;
@@ -129,6 +136,7 @@ public class ReaderWindowFactory {
         if(centered){
             readerFrame.setLocationRelativeTo(null);
         }
+        // TODO: Icon setzen, wenn vorhanden → readerFrame.setIconImage(icon.getImage());
         return readerFrame;
     }
 

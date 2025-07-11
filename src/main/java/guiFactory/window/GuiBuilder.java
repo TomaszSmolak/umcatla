@@ -68,6 +68,7 @@ public class GuiBuilder {
                     .setCentered(true)
                     .setCloseOperation(DISPOSE_ON_CLOSE)
                     .build();
+            new ReaderGuiBuilder().build(readerWindow);
             readerWindow.setVisible(true);
         });
 
