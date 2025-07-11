@@ -88,6 +88,7 @@ public class GuiBuilder {
                     .setCentered(true)
                     .setCloseOperation(DISPOSE_ON_CLOSE)
                     .build();
+            new InputStreamGuiBuilder().build(inputStreamWindow);
             inputStreamWindow.setVisible(true);
         });
 

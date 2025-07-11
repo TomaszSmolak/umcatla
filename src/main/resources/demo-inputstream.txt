@@ -1,0 +1,4 @@
+Hallo Stream 👋
+Dies ist ein Test für byteweises Lesen.
+12345 ABCDE
+

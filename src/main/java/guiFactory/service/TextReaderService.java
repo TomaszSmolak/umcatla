@@ -13,20 +13,20 @@ public class TextReaderService {
      * @param parent       Elternkomponente für Fehlermeldungen (z. B. JFrame)
      */
     public static void loadFileToTextArea(String resourcePath, JTextArea textArea, JFrame parent) {
-        try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(TextReaderService.class.getResourceAsStream(resourcePath)))) {
+    try (BufferedReader reader = new BufferedReader(
+            new InputStreamReader(TextReaderService.class.getResourceAsStream(resourcePath)))) {
 
-            textArea.setText(""); // vorherigen Text löschen
-            String line;
-            while ((line = reader.readLine()) != null) {
-                textArea.append(line + "\n");
-            }
-
-        } catch (IOException | NullPointerException ex) {
-            JOptionPane.showMessageDialog(parent,
-                    "Fehler beim Laden der Datei:\n" + ex.getMessage(),
-                    "Fehler", JOptionPane.ERROR_MESSAGE);
+        textArea.setText(""); // vorherigen Text löschen
+        String line;
+        while ((line = reader.readLine()) != null) {
+            textArea.append(line + "\n");
         }
+
+    } catch (IOException | NullPointerException ex) {
+        JOptionPane.showMessageDialog(parent,
+                "Fehler beim Laden der Datei:\n" + ex.getMessage(),
+                "Fehler", JOptionPane.ERROR_MESSAGE);
     }
+}
 }
 
